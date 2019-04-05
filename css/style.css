@@ -98,6 +98,14 @@ body {
   font-weight: 400;
 }
 
+.campaign-table tbody:hover tr:not(:hover) {
+  opacity: 0.3;
+}
+
+.campaign-table tr {
+  transition: opacity 0.2s;
+}
+
 .campaign-table th,
 .campaign-table tr:not(:last-child) td {
   border-bottom: 1px solid var(--border-color);
@@ -113,6 +121,10 @@ body {
 .col-date .days {
   display: block;
   font-size: 10px;
+}
+
+.col-date {
+  cursor: pointer;
 }
 
 .col-campaign .txt-group {
@@ -163,6 +175,34 @@ body {
   position: relative;
   padding-bottom: 30px;
   vertical-align: middle;
+}
+
+.modal-wrapper {
+  background: rgba(0, 0, 0, 0.57);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: none;
+}
+
+.modal-wrapper .modal {
+  max-width: 500px;
+  background: #fff;
+  margin: 50px auto;
+  padding: 15px;
+}
+
+.modal-wrapper h2 {
+  margin-bottom: 20px;
+}
+
+.list-item {
+  list-style: none;
+}
+
+.modal .close {
+  float: right;
 }
 
 @media (min-width: 768px) {

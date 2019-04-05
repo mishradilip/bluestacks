@@ -48,7 +48,6 @@ function getCampaign() {
 
     arr.push('<tr class="table-row" translate="no"><td class="col-date"><span class="date">'+ campainJson[i].date + '</span><span class="days">' + campainJson[i].days + '</span></td><td class="col-campaign"><i class="' + campainJson[i].icon +'" aria-hidden="true"></i><span class="txt-group"><span class="campaign-txt">'+ campainJson[i].campaign +'</span><span class="campaign-lang">'+ campainJson[i].lang +'</span></span></td><td class="col-view"><a class="link-txt" href="javascript:void(0)""><span class="fa-stack"><i class="fa fa-usd" aria-hidden="true"></i><i class="fa fa-plus"></i></span><span>VIEW PRICING</span></a></td><td class="col-action"><a class="link-txt" href="javascript:void(0)"><i class="fa fa-file-excel-o" aria-hidden="true"></i><span>CSV</span></a><a class="link-txt" href="javascript:void(0)"><i class="fa fa-signal" aria-hidden="true"></i><span>REPORT</span></a><a class="link-txt schedule-date" href="javascript:void(0)"><i class="fa fa-calendar" aria-hidden="true"></i> <input type="input" class="datepick" /></a></td></tr>');
   }
-  console.log("arr", arr);
   document.getElementById("table_content").innerHTML = arr.join('');
 }
 
@@ -68,7 +67,14 @@ $( function() {
 
     //Show modal
     $(".campaign-table").delegate(".col-date", "click", function(){
-      alert('Date: ' + $(this).parents('.table-row').find('.date').html() + ' CAMPAIGN: '+ $(this).parents('.table-row').find('.col-campaign .campaign-txt').html()) ;
+      var data = $(this).parents('.table-row');
+      var modalData = '<div class="modal"><h2 class="text-center">Selected Value <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span></h2><ul class="list-item"><li><label>Date: </label> <span>' + data.find('.date').html() +'</span></li><li><label>Campaign: </label><span>' + data.find('.col-campaign .campaign-txt').html() +'</span> </li></ul></div>'
+      document.getElementById("modal_wrapper").innerHTML = modalData;
+      $('.modal-wrapper').show();
     });
+
+    $('.manage-campaign').delegate(".close", "click", function(){
+      $('.modal-wrapper').hide();
+    })
 
 } );
