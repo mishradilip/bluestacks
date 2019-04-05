@@ -1,0 +1,208 @@
+:root {
+  --primary-color: #fb641b;
+  --dark-color: #000;
+  --text-color: #666;
+  --border-color: #666;
+  --white-color: #fff;
+  --primary-bg : #ddd;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  color: var(--text-color);
+  margin:0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flex,
+.row {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.justify-content-sa {
+  justify-content: space-around;
+}
+
+.justify-content-sb {
+  justify-content: space-between;
+}
+
+.justify-content-c {
+  justify-content: center;
+}
+
+.align-item-c {
+  align-items: center;
+}
+
+.align-item-fs {
+  align-items: flex-start;
+}
+
+.align-item-fe {
+  align-items: flex-end;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Body Styling */
+.page-heading {
+  font-size: 30px;
+  margin: 30px 0;
+  font-weight: 400;
+}
+
+.campaign-table thead {
+  background-color: var(--primary-bg);
+}
+
+.campaign-table {
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+.campaign-table th,
+.campaign-table td {
+  padding: 10px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.campaign-table th,
+.campaign-table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.campaign-table th:not(:last-child),
+.campaign-table td:not(:last-child) {
+  border-right: 1px solid var(--border-color);
+}
+
+.link-txt span:not(.fa-stack),
+.col-campaign span:not(.txt-group),
+.col-date .days {
+  display: block;
+  font-size: 10px;
+}
+
+.col-campaign .txt-group {
+  display: inline-block;
+}
+
+.link-txt {
+  display: inline-block;
+  width: 90px;
+  text-align: center;
+}
+
+.col-campaign .fa {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.col-view .fa-stack {
+  background-color: var(--dark-color);
+  border-radius: 50%;
+}
+
+.col-view .fa-stack .fa {
+  color: var(--white-color);
+}
+
+.col-view .fa-stack .fa-plus {
+  font-size: 8px;
+}
+
+.datepick {
+  display: none;
+}
+
+.ui-datepicker-trigger {
+  border: none;
+  background: transparent;
+  font-size: 10px;
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  left: 0;
+  height: 40px;
+  cursor: pointer;
+}
+
+.schedule-date {
+  position: relative;
+  padding-bottom: 30px;
+  vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+  .campaign-table th:first-child {
+    width: 20%;
+  }
+
+  .campaign-table th:nth-child(2) {
+    width: 30%;
+  }
+
+  .campaign-table th:nth-child(3) {
+    width: 10%;
+  }
+}
+
+@media (max-width: 767px) {
+  .col-campaign .txt-group {
+    display: none;
+  }
+  .campaign-table th {
+    font-size: 12px;
+  }
+  .campaign-table th:first-child {
+    width: 25%;
+  }
+
+  .campaign-table th:last-child {
+    width: 40%;
+  }
+
+  .campaign-table th:nth-child(2) {
+    width: 5%;
+  }
+
+  .campaign-table th:nth-child(3),
+  .campaign-table td:nth-child(3) {
+    display: none;
+  }
+  .link-txt {
+    width: 60px;
+  }
+}
